@@ -33,7 +33,7 @@
 	
 	$arr1[0] = $arr['carMsg'];
 	
-	/*
+	
 	$carmsg[0]['key'] = 'Brand';
 	$carmsg[0]['value'] = '宝马';
 	$carmsg[1]['key'] = "Model";
@@ -61,7 +61,7 @@
 	$arr['carMsg']['Logo'] = "http://7xst41.com2.z0.glb.clouddn.com/BMW.png";
 	
 	$arr1[1] = $arr['carMsg'];
-*/
+
 	
 	$data['dataArr'] = $arr1;
 	
