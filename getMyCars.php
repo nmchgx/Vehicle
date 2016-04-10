@@ -4,7 +4,7 @@
 	$str1 = '{"ID":"2","Brand":"宝马","Logo":"宝马","Model":"A4L"，"License":"京E20849","EngNum":"491Q-E649815","BodyLevel":"四门四座","Mil":"10000","GasVol":"80","EngOK":"1","TranOK":"1","LightOK":"1"}';
 	$str2 = '{"ID":"3","Brand":"宝马","Logo":"宝马","Model":"A4L"，"License":"京E20849","EngNum":"491Q-E649815","BodyLevel":"四门四座","Mil":"10000","GasVol":"80","EngOK":"1","TranOK":"1","LightOK":"1"}';
 	
-	
+	//123
 	$carmsg[0]['key'] = 'Brand';
 	$carmsg[0]['value'] = '宝马';
 	$carmsg[1]['key'] = "Model";
