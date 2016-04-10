@@ -5,25 +5,25 @@
 	$str2 = '{"ID":"3","Brand":"宝马","Logo":"宝马","Model":"A4L"，"License":"京E20849","EngNum":"491Q-E649815","BodyLevel":"四门四座","Mil":"10000","GasVol":"80","EngOK":"1","TranOK":"1","LightOK":"1"}';
 	
 	
-	$carmsg[0]['key'] = 'Brand';
+	$carmsg[0]['key'] = '汽车品牌';
 	$carmsg[0]['value'] = '宝马';
-	$carmsg[1]['key'] = "Model";
+	$carmsg[1]['key'] = "型号";
 	$carmsg[1]["value"] = "A4L";
-	$carmsg[2]['key'] = "License";
+	$carmsg[2]['key'] = "车牌号";
 	$carmsg[2]["value"] = "京E20849";
-	$carmsg[3]['key'] =  "EngNum";
+	$carmsg[3]['key'] =  "发动机号";
 	$carmsg[3]["value"] =  "491Q-E649815";
-	$carmsg[4]['key'] = "BodyLevel";
+	$carmsg[4]['key'] = "车身级别";
 	$carmsg[4]["value"] = "四门四座";
-	$carmsg[5]['key'] = "Mil";
+	$carmsg[5]['key'] = "里程数";
 	$carmsg[5]["value"] = 10000;
-	$carmsg[6]['key'] = "GasVol";
+	$carmsg[6]['key'] = "油量%";
 	$carmsg[6]["value"] = 80;
-	$carmsg[7]['key'] = "EngOK";
+	$carmsg[7]['key'] = "发动机状态";
 	$carmsg[7]["value"] = '正常';
-	$carmsg[8]['key'] = "TranOK";
+	$carmsg[8]['key'] = "变速器状态";
 	$carmsg[8]["value"] = '正常';
-	$carmsg[9]['key'] = "LightOK";
+	$carmsg[9]['key'] = "车灯状态";
 	$carmsg[9]["value"] = '正常';
 	
 	$arr['carMsg']['carmsg'] = $carmsg;
@@ -34,25 +34,25 @@
 	$arr1[0] = $arr['carMsg'];
 	
 	
-	$carmsg[0]['key'] = 'Brand';
+	$carmsg[0]['key'] = '汽车品牌';
 	$carmsg[0]['value'] = '宝马';
-	$carmsg[1]['key'] = "Model";
+	$carmsg[1]['key'] = "型号";
 	$carmsg[1]["value"] = "A4L";
-	$carmsg[2]['key'] = "License";
+	$carmsg[2]['key'] = "车牌号";
 	$carmsg[2]["value"] = "京E20849";
-	$carmsg[3]['key'] =  "EngNum";
+	$carmsg[3]['key'] =  "发动机号";
 	$carmsg[3]["value"] =  "491Q-E649815";
-	$carmsg[4]['key'] = "BodyLevel";
+	$carmsg[4]['key'] = "车身级别";
 	$carmsg[4]["value"] = "四门四座";
-	$carmsg[5]['key'] = "Mil";
+	$carmsg[5]['key'] = "里程数";
 	$carmsg[5]["value"] = 10000;
-	$carmsg[6]['key'] = "GasVol";
+	$carmsg[6]['key'] = "油量%";
 	$carmsg[6]["value"] = 80;
-	$carmsg[7]['key'] = "EngOK";
+	$carmsg[7]['key'] = "发动机状态";
 	$carmsg[7]["value"] = '正常';
-	$carmsg[8]['key'] = "TranOK";
+	$carmsg[8]['key'] = "变速器状态";
 	$carmsg[8]["value"] = '正常';
-	$carmsg[9]['key'] = "LightOK";
+	$carmsg[9]['key'] = "车灯状态";
 	$carmsg[9]["value"] = '正常';
 	
 	$arr['carMsg']['carmsg'] = $carmsg;
