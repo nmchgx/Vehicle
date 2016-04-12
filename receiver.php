@@ -3,6 +3,7 @@
 	
 	require "jsonHelper.php";
 	require "connectSQL.php";
+	require "sqlHelper.php";
 	
 	$PostType = $_GET['PostType'];
 	
