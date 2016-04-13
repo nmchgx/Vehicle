@@ -1,6 +1,6 @@
 <?php
 
-$mysql = new mysqli("localhost", "root","123456","vehicle");
+$mysql = new mysqli("localhost", "root","root","vehicle");
 if(mysqli_connect_errno()){
     die("Unable to connect!").mysqli_connect_error();
 }
