@@ -35,6 +35,7 @@
 				switch ($PostType) {		
 					case "getMyCars":  require "getMyCars.php"; break;
 					case "addFillingOrder":  require "addFillingOrder.php"; break;
+					case "getFillingOrder":  require "getFillingOrder.php"; break;
 				}
 			}
 			else{

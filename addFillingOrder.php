@@ -45,7 +45,7 @@ QiniuUpload($qrcode_name);
 // 数据库操作
 $result = null;
 
-$sql="INSERT INTO orders (C_ID,Car_ID,Filling_Type,Filling_Amount,Filling_Station_ID,Filling_Station,Filling_Time,Order_Status,Order_QRCode) VALUES ('$C_ID','$Car_ID','$Filling_Type','$Filling_Amount','$Filling_Station_ID','$Filling_Station','$Filling_Time','0','$Order_QRCode')";
+$sql="INSERT INTO orders (C_ID,Car_ID,Filling_Type,Filling_Amount,Filling_Station_ID,Filling_Station,Filling_Time,Order_Status,Order_QRCode) VALUES ('$C_ID','$Car_ID','$Filling_Type','$Filling_Amount','$Filling_Station_ID','$Filling_Station','$Filling_Time','1','$Order_QRCode')";
 $sqlResult=$mysql->query($sql);
 //echo $sql;
 if(!empty($sqlResult)) {
