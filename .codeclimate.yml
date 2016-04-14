@@ -15,4 +15,6 @@ ratings:
   paths:
   - "**.js"
   - "**.php"
-exclude_paths: []
+exclude_paths:
+- phpqrcode/**/*
+- qiniu/**/*
