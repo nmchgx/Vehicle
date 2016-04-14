@@ -34,8 +34,11 @@
 			
 				switch ($PostType) {		
 					case "getMyCars":  require "getMyCars.php"; break;
+					/* 汽车加油 start */
 					case "addFillingOrder":  require "addFillingOrder.php"; break;
 					case "getFillingOrder":  require "getFillingOrder.php"; break;
+					case "cancelFillingOrder":  require "cancelFillingOrder.php"; break;
+					/* 汽车加油 end */
 				}
 			}
 			else{
