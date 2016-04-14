@@ -8,45 +8,31 @@
  */
 
 $C_ID = $_POST['C_ID'];
+$type = $_POST['type'];
+$key_words = null;
 $result = null;
 $data = null;
-$finished = null;
-$unfinished = null;
 
-$sql_finished = "SELECT orders.Order_ID, orders.C_ID,orders.Car_ID,car.Car_Model,orders.Filling_Type,orders.Filling_Amount,orders.Filling_Station_ID,orders.Filling_Station,orders.Filling_Time,orders.Order_Status,orders.Order_QRCode FROM orders,car WHERE orders.C_ID = '$C_ID' AND car.Car_ID = orders.Car_ID AND orders.Order_Status in (0, 3) ORDER BY orders.Order_Time DESC";
-//echo $sql_finished;
-$sqlResult_finished = $mysql->query($sql_finished);
+switch ($type) {
+    case 0: {$key_words = "";break;} // 所有
+    case 1: {$key_words = "AND orders.Order_Status in (0, 3)";break;} // 已完成
+    case 2: {$key_words = "AND orders.Order_Status in (1, 2)";break;} // 未完成
+}
 
-if(!empty($sqlResult_finished)){
-    foreach($sqlResult_finished as $row=>$rowVal){
-        $finished[$row] = $rowVal;
+$sql = "SELECT orders.Order_ID, orders.C_ID,orders.Car_ID,car.Car_Model,orders.Filling_Type,orders.Filling_Amount,orders.Filling_Station_ID,orders.Filling_Station,orders.Filling_Time,orders.Order_Status,orders.Order_QRCode FROM orders,car WHERE orders.C_ID = '$C_ID' AND car.Car_ID = orders.Car_ID $key_words ORDER BY orders.Order_Time DESC";
+$sqlResult = $mysql->query($sql);
+
+if(!empty($sqlResult)){
+    foreach($sqlResult as $row=>$rowVal){
+        $data[$row] = $rowVal;
     }
 
-    $data['finished'] = $finished;
+    $result['msg'] = '获取成功';
+    $result['code'] = 1;
+    $result['data'] = $data;
 
-    $sql_unfinished = "SELECT orders.Order_ID, orders.C_ID,orders.Car_ID,car.Car_Model,orders.Filling_Type,orders.Filling_Amount,orders.Filling_Station_ID,orders.Filling_Station,orders.Filling_Time,orders.Order_Status,orders.Order_QRCode FROM orders,car WHERE orders.C_ID = '$C_ID' AND car.Car_ID = orders.Car_ID AND orders.Order_Status in (1, 2) ORDER BY orders.Order_Time DESC";
-    $sqlResult_unfinished = $mysql->query($sql_unfinished);
-
-    if(!empty($sqlResult_unfinished)){
-        foreach($sqlResult_unfinished as $row=>$rowVal){
-            $unfinished[$row] = $rowVal;
-        }
-
-        $data['unfinished'] = $unfinished;
-        $result['msg'] = '获取成功';
-        $result['code'] = 1;
-        $result['data'] = $data;
-
-        $json = JSON($result);
-        echo $json;
-    }
-    else{
-        $result['msg'] = '获取失败';
-        $result['code'] = 0;
-
-        $json = JSON($result);
-        echo $json;
-    }
+    $json = JSON($result);
+    echo $json;
 }
 else{
     $result['msg'] = '获取失败';
