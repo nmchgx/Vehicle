@@ -32,8 +32,12 @@
 			
 			if(1){
 			
-				switch ($PostType) {		
+				switch ($PostType) {
+					/* 汽车维护 start */
 					case "getMyCars":  require "getMyCars.php"; break;
+					case "getAllCars": require "getAllCars.php"; break;
+					/* 汽车维护 end */
+					
 					/* 汽车加油 start */
 					case "addFillingOrder":  require "addFillingOrder.php"; break;
 					case "getFillingOrder":  require "getFillingOrder.php"; break;
