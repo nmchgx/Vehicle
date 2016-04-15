@@ -36,6 +36,7 @@
 					/* 汽车维护 start */
 					case "getMyCars":  require "getMyCars.php"; break;
 					case "getAllCars": require "getAllCars.php"; break;
+					case "getTheCar" : require "getTheCar.php"; break;
 					/* 汽车维护 end */
 					
 					/* 汽车加油 start */
