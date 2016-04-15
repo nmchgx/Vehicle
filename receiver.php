@@ -1,7 +1,7 @@
 ﻿<?php
 	session_start();
 	
-	require "jsonHelper.php";
+	require "jsonHelper.php";		//json封装
 	require "connectSQL.php";
 	require "sqlHelper.php";
 	
@@ -23,54 +23,68 @@
 		//$loginName = $_GET['loginName'];
 		//$token = $_GET['token'];
 		
-		//echo $loginName."\n";
-		//echo $token."\n";
 		
-		//echo "*".$_SESSION['token']."*";
 		
-		if(!isset($_SESSION['token'])){
+		$tokenSql = "select T_Secret from token,customer where customer.C_ID=token.C_ID AND C_LoginName='".$loginName."'";
+		
+		$res = mysql_query($tokenSql);
+		if($res === false)
+		{
+			$obj['length'] = 0;
+		
+			$array['data'] = $obj;
+			$array['msg'] = "连接出错";
+			$array['code'] = -1;
 			
-			if(1){
+			$returnStr = JSON($array);	
 			
-				switch ($PostType) {
-					/* 汽车维护 start */
-					case "getMyCars":  require "getMyCars.php"; break;
-					case "getAllCars": require "getAllCars.php"; break;
-					case "getTheCar" : require "getTheCar.php"; break;
-					/* 汽车维护 end */
-					
-					/* 汽车加油 start */
-					case "addFillingOrder":  require "addFillingOrder.php"; break;
-					case "getFillingOrder":  require "getFillingOrder.php"; break;
-					case "cancelFillingOrder":  require "cancelFillingOrder.php"; break;
-					/* 汽车加油 end */
-				}
+		}else{
+			$tsecret = "";
+			while($row=mysql_fetch_array($res)){
+				$tsecret = $row['T_Secret'];	
 			}
-			else{
+			if($tsecret === ""){
 				$returnStr;
 				$obj['length'] = 0;
 				
 				$array['data'] = $obj;
-				$array['msg'] = "登录状态失效，请重新登录";
+				$array['token'] = $_SESSION['token'];
+				$array['msg'] = "未登录";
 				$array['code'] = 0;
 				
 				$returnStr = JSON($array);
 				echo $returnStr;
 			}
+			else{
+				if($tsecret === $token){
+					switch ($PostType) {
+						/* 汽车维护 start */
+						case "getMyCars":  require "getMyCars.php"; break;
+						case "getTheCar":  require "getTheCar.php"; break;
+						case "getAllCars": require "getAllCars.php"; break;
+						/* 汽车维护 end */
+						
+						/* 汽车加油 start */
+						case "addFillingOrder":  require "addFillingOrder.php"; break;
+						case "getFillingOrder":  require "getFillingOrder.php"; break;
+						case "cancelFillingOrder":  require "cancelFillingOrder.php"; break;
+						/* 汽车加油 end */
+					}
+				}
+				else{
+					$returnStr;
+					$obj['length'] = 0;
+					
+					$array['data'] = $obj;
+					$array['msg'] = "登录状态失效，请重新登录";
+					$array['code'] = 0;
+					
+					$returnStr = JSON($array);
+					echo $returnStr;
+				}
+			}
 		}
-		else{
-			$returnStr;
-			$obj['length'] = 0;
-			
-			$array['data'] = $obj;
-			$array['token'] = $_SESSION['token'];
-			$array['msg'] = "未登录";
-			$array['code'] = 0;
-			
-			$returnStr = JSON($array);
-			echo $returnStr;
-		}
-		
+		mysql_free_result($res);
 	}
 	mysql_close($conn);
 

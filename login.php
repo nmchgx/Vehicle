@@ -25,10 +25,12 @@
 	{
 		$psw = "";
 		$nickName = "";
+		$cid = "";
 		while($row=mysql_fetch_array($result))
 		{
 			$psw = $row['C_Password'];
 			$nickName = $row['C_NickName'];
+			$cid = $row['C_ID'];
 		}
 		if($psw === "")
 		{
@@ -54,19 +56,42 @@
 				$array['code'] = 1;
 				
 				
-				//session记录
+				/*//session记录
 				$_SESSION['token'] = $token;
 				$array['session'] = $_SESSION['token'];
-				
-				
-				
+				*/
+						
 				$returnStr = JSON($array);
 				
+				$sql1 = "select * from token where C_ID=".$cid;
+				$result1 = mysql_query($sql1);
+				
+				$is = "";
+				while($row=mysql_fetch_array($result1))
+				{
+					$is = $row['T_Secret'];
+				}
+				
+				if($is === ""){
+					$addSql = "insert into token(C_ID, T_Secret) values (".$cid.",'".$token."')";
+					$result2=mysql_query($addSql);
+					
+					mysql_free_result($result2);
+				}else{
+					$updateSql = "update token set T_Secret='".$token."'  where C_ID=".$cid;
+					$result2=mysql_query($updateSql);
+					
+					mysql_free_result($result2);
+				}
+					
 				//session记录
 				//$_SESSION['token'] = $token;
 				
 				//echo $_SESSION['token'];
 				//echo $token."\n";
+				
+				// 释放资源
+    			mysql_free_result($result1);
 			}
 			else
 			{
