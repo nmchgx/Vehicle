@@ -2,9 +2,10 @@
 	
 	//require "jsonHelper.php";
 	//require "connectSQL.php";
-	$C_ID = $_POST['C_ID'];
+	$loginName = $_POST['loginName'];
+	//$loginName = 'Yann';
 	
-	$sql = "SELECT Car_ID, Car_Brand, Car_Model FROM car WHERE C_ID =".$C_ID;
+	$sql = "SELECT Car_ID, Car_Brand, Car_Model FROM car,customer WHERE customer.C_ID = car.C_ID AND C_LoginName='".$loginName."'";
 	
 	$result=mysql_query($sql);
 	
