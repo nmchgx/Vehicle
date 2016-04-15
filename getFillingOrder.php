@@ -27,16 +27,18 @@ if(!empty($sqlResult)){
         $data[$row] = $rowVal;
     }
 
-    $result['msg'] = '获取成功';
-    $result['code'] = 1;
-    $result['data'] = $data;
-
-    $json = JSON($result);
-    echo $json;
+    returnData("获取成功", 1, $data);
 }
 else{
-    $result['msg'] = '获取失败';
-    $result['code'] = 0;
+    returnData("获取失败", 0);
+}
+
+function returnData ($msg, $code, $data) {
+    $result['msg'] = $msg;
+    $result['code'] = $code;
+    if ($data) {
+        $result['data'] = $data;
+    }
 
     $json = JSON($result);
     echo $json;

@@ -48,16 +48,16 @@ $result = null;
 
 $sql="INSERT INTO orders (C_ID,Car_ID,Filling_Type,Filling_Amount,Filling_Station_ID,Filling_Station,Filling_Time,Order_Status,Order_QRCode) VALUES ('$C_ID','$Car_ID','$Filling_Type','$Filling_Amount','$Filling_Station_ID','$Filling_Station','$Filling_Time','1','$Order_QRCode')";
 $sqlResult=$mysql->query($sql);
-//echo $sql;
-if(!empty($sqlResult)) {
-    $result['msg'] = '下单成功';
-    $result['code'] = 1;
 
-    $json = JSON($result);
-    echo $json;
+if(!empty($sqlResult)) {
+    returnData("下单成功", 1);
 }else{
-    $result['msg'] = '下单失败';
-    $result['code'] = 0;
+    returnData("下单失败", 0);
+}
+
+function returnData ($msg, $code) {
+    $result['msg'] = $msg;
+    $result['code'] = $code;
 
     $json = JSON($result);
     echo $json;

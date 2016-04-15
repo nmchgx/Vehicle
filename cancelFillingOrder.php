@@ -15,16 +15,16 @@ $result = null;
 
 $sql="UPDATE orders SET Order_Status = 0 WHERE Order_ID = '$Order_ID' AND C_ID = '$C_ID'";
 $sqlResult=$mysql->query($sql);
-//echo $sql;
-if(!empty($sqlResult)) {
-    $result['msg'] = '取消成功';
-    $result['code'] = 1;
 
-    $json = JSON($result);
-    echo $json;
+if(!empty($sqlResult)) {
+    returnData("取消成功", 1);
 }else{
-    $result['msg'] = '取消失败';
-    $result['code'] = 0;
+    returnData("取消失败", 0);
+}
+
+function returnData ($msg, $code) {
+    $result['msg'] = $msg;
+    $result['code'] = $code;
 
     $json = JSON($result);
     echo $json;
