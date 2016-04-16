@@ -44,7 +44,7 @@
 			$returnStr = JSON($array);
 		}else{
 			
-			$sql2 = "select * from car where C_ID=".$c_id." order by C_ID DESC limit 1";
+			$sql2 = "select * from car where C_ID=".$c_id." order by Car_ID DESC limit 1";
 			$result2=mysql_query($sql2);
 			if($result2 === false)
 			{	
