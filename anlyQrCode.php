@@ -43,13 +43,34 @@
 			
 			$returnStr = JSON($array);
 		}else{
-			$obj['length'] = 0;
-					
-			$array['data'] = $obj;
-			$array['msg'] = "添加车辆成功";
-			$array['code'] = 1;
-					
-			$returnStr = JSON($array);	
+			
+			$sql2 = "select * from car where C_ID=".$c_id." order by C_ID DESC limit 1";
+			$result2=mysql_query($sql2);
+			if($result2 === false)
+			{	
+				$obj['length'] = 0;
+				
+				$array['data'] = $obj;
+				$array['msg'] = "连接出错";
+				$array['code'] = -1;
+				
+				$returnStr = JSON($array);
+			}else{
+				while($row=mysql_fetch_array($result2)){
+					$carid = $row['Car_ID'];
+					$title = $row['Car_Brand'].$row['Car_Model'];
+				}
+				
+				$obj['Car_ID'] = $carid;
+				$obj['Car_Title'] = $title;
+						
+				$array['data'] = $obj;
+				$array['msg'] = "添加车辆成功";
+				$array['code'] = 1;
+						
+				$returnStr = JSON($array);	
+			}
+			mysql_free_result($result2);
 		}
 		mysql_free_result($result1);
 		
