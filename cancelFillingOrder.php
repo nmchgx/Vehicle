@@ -7,7 +7,7 @@
  * Function: 取消汽车加油订单
  */
 
-$C_ID = $_POST['C_ID'];
+$C_ID = $_POST['c_id'];
 $Order_ID = $_POST['Order_ID'];
 
 // 数据库操作

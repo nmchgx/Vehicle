@@ -9,11 +9,11 @@
 
 include 'phpqrcode/phpqrcode.php';
 
-
-$C_ID = $_POST['C_ID'];
+$C_ID = $_POST['c_id'];
 $Car_ID = $_POST['Car_ID'];
 $Filling_Type = $_POST['Filling_Type'];
 $Filling_Amount = $_POST['Filling_Amount'];
+$Filling_Total = $_POST['Filling_Total'];
 $Filling_Station_ID = $_POST['Filling_Station_ID'];
 $Filling_Station = $_POST['Filling_Station'];
 $Filling_Time = $_POST['Filling_Time'];
@@ -46,7 +46,7 @@ QiniuUpload($qrcode_name);
 // 数据库操作
 $result = null;
 
-$sql="INSERT INTO orders (C_ID,Car_ID,Filling_Type,Filling_Amount,Filling_Station_ID,Filling_Station,Filling_Time,Order_Status,Order_QRCode) VALUES ('$C_ID','$Car_ID','$Filling_Type','$Filling_Amount','$Filling_Station_ID','$Filling_Station','$Filling_Time','1','$Order_QRCode')";
+$sql="INSERT INTO orders (C_ID,Car_ID,Filling_Type,Filling_Amount,Filling_Total,Filling_Station_ID,Filling_Station,Filling_Time,Order_Status,Order_QRCode) VALUES ('$C_ID','$Car_ID','$Filling_Type','$Filling_Amount','$Filling_Total','$Filling_Station_ID','$Filling_Station','$Filling_Time','1','$Order_QRCode')";
 $sqlResult=$mysql->query($sql);
 
 if(!empty($sqlResult)) {

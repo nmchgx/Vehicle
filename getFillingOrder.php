@@ -7,7 +7,7 @@
  * Function: 获取汽车加油订单
  */
 
-$C_ID = $_POST['C_ID'];
+$C_ID = $_POST['c_id'];
 $type = $_POST['type'];
 $key_words = null;
 $result = null;
@@ -19,7 +19,7 @@ switch ($type) {
     case 2: {$key_words = "AND orders.Order_Status in (1, 2)";break;} // 未完成
 }
 
-$sql = "SELECT orders.Order_ID, orders.C_ID,orders.Car_ID,car.Car_Model,orders.Filling_Type,orders.Filling_Amount,orders.Filling_Station_ID,orders.Filling_Station,orders.Filling_Time,orders.Order_Status,orders.Order_QRCode FROM orders,car WHERE orders.C_ID = '$C_ID' AND car.Car_ID = orders.Car_ID $key_words ORDER BY orders.Order_Time DESC";
+$sql = "SELECT orders.Order_ID, orders.C_ID,orders.Car_ID,car.Car_Model,orders.Filling_Type,orders.Filling_Amount,orders.Filling_Total,orders.Filling_Station_ID,orders.Filling_Station,orders.Filling_Time,orders.Order_Status,orders.Order_QRCode FROM orders,car WHERE orders.C_ID = '$C_ID' AND car.Car_ID = orders.Car_ID $key_words ORDER BY orders.Order_Time DESC";
 $sqlResult = $mysql->query($sql);
 
 if(!empty($sqlResult)){
