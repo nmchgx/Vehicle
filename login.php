@@ -50,6 +50,7 @@
 				$token = md5(time() . mt_rand(0,1000));
 				$data['token'] = $token;
 				$data['loginName'] = $loginName;
+				$data['C_ID'] = $cid;
 				
 				$array['data'] = $data;
 				$array['msg'] = "登陆成功";

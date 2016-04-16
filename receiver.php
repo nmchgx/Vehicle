@@ -17,7 +17,7 @@
 	}
 	else
 	{
-		$loginName = $_POST['loginName'];
+		$c_id = $_POST['c_id'];
 		$token = $_POST['token'];
 		
 		//$loginName = $_GET['loginName'];
@@ -25,7 +25,7 @@
 		
 		
 		
-		$tokenSql = "select T_Secret from token,customer where customer.C_ID=token.C_ID AND C_LoginName='".$loginName."'";
+		$tokenSql = "select T_Secret from token where C_ID=".$c_id;
 		
 		$res = mysql_query($tokenSql);
 		if($res === false)
