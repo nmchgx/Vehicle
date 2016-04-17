@@ -58,6 +58,10 @@
 			else{
 				if($tsecret === $token){
 					switch ($PostType) {
+						/* 用户管理 start */
+						case "logout":  require "logout.php"; break;
+						/* 用户管理 end */
+						
 						/* 汽车维护 start */
 						case "getMyCars":  require "getMyCars.php"; break;
 						case "getTheCar":  require "getTheCar.php"; break;
