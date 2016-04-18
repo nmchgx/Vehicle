@@ -1,7 +1,7 @@
 <?php
 	
-	require "jsonHelper.php";
-	require "connectSQL.php";
+	//require "jsonHelper.php";
+	//require "connectSQL.php";
 	$c_id = $_POST['c_id'];
 	//$loginName = 'Yann';
 	//$c_id = 1;
