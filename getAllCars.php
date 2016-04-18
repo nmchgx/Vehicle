@@ -1,9 +1,10 @@
 <?php
 	
-	//require "jsonHelper.php";
-	//require "connectSQL.php";
+	require "jsonHelper.php";
+	require "connectSQL.php";
 	$c_id = $_POST['c_id'];
 	//$loginName = 'Yann';
+	//$c_id = 1;
 	
 	$sql = "SELECT Car_ID, Car_Brand, Car_Model, Car_LicensePlate, Car_EngineNum  FROM car WHERE C_ID = ".$c_id;
 	
