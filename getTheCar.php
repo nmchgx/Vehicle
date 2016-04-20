@@ -46,7 +46,7 @@
 			$carmsg[4]['status'] = 0;
 			$carmsg[5]['key'] = "里程数";
 			$carmsg[5]["value"] = $row['Car_Mileage']."km";
-			$carmsg[5]['status'] = 2;
+			$carmsg[5]['status'] = 1;
 			
 			$carmsg[6]['key'] = "油量";
 			$is = (int)$row['Car_GasVol'];
