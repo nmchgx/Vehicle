@@ -3,7 +3,7 @@
 	$token = $_POST['token'];
 	
 	$tokenSql = "select T_Secret from token where C_ID=".$c_id;
-		
+	
 	$res = mysql_query($tokenSql);
 	if($res === false)
 	{
