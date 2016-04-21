@@ -13,7 +13,7 @@ function submitAC(){
 			
 			$("#account").hide();
 			$("#submitAC").hide();
-			$("#form").show();	
+			$("#form").show();
 			
 			c_id = data.data.c_id;
 			

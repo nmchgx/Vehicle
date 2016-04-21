@@ -9,7 +9,7 @@
 	//$Car_ID = 5;
 	//$C_ID = 1;
 	
-	$sql = "DELETE FROM car WHERE Car_ID =".$Car_ID. " AND C_ID=".$C_ID;
+	$sql = "DELETE FROM car WHERE Car_ID =".$Car_ID. " AND C_ID=".$c_id;
 	$result=mysql_query($sql);
 	
 	$returnStr;	
@@ -17,6 +17,8 @@
 	{	
 		$obj['length'] = 0;
 		
+		$array['c_id'] = $c_id;
+		$array['Car_ID'] = $Car_ID;
 		$array['data'] = $obj;
 		$array['msg'] = "连接出错";
 		$array['code'] = -1;
