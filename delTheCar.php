@@ -1,7 +1,13 @@
 <?php
+	//require "jsonHelper.php";
+	//require "connectSQL.php";
+	
 	$Car_ID = $_POST['Car_ID'];
 	
-	$C_ID = $_POST['c_id'];
+	$c_id = $_POST['c_id'];
+	
+	//$Car_ID = 5;
+	//$C_ID = 1;
 	
 	$sql = "DELETE FROM car WHERE Car_ID =".$Car_ID. " AND C_ID=".$C_ID;
 	$result=mysql_query($sql);
