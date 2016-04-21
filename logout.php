@@ -18,7 +18,7 @@
 	}
 	else
 	{
-		$obj = $obj['length'] = 0;
+		$obj['length'] = 0;
 				
 		$array['data'] = $obj;
 		$array['msg'] = "注销成功";
