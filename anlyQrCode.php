@@ -60,13 +60,13 @@
 					$carid = $row['Car_ID'];
 					$title = $row['Car_Brand'].$row['Car_Model'];
 					$carLicensePlate = $row['Car_LicensePlate'];
-					$carngineNum = $row['Car_EngineNum'];
+					$carEngineNum = $row['Car_EngineNum'];
 				}
 				
 				$obj['Car_ID'] = $carid;
 				$obj['Car_Title'] = $title;
 				$obj['Car_LicensePlate'] = $carLicensePlate;
-				$obj['Car_EngineNum'] = $carngineNum;
+				$obj['Car_EngineNum'] = $carEngineNum;
 						
 				$array['data'] = $obj;
 				$array['msg'] = "添加车辆成功";
