@@ -21,9 +21,7 @@
 		$token = $_POST['token'];
 		
 		//$loginName = $_GET['loginName'];
-		//$token = $_GET['token'];
-		
-		
+		//$token = $_GET['token'];		
 		
 		$tokenSql = "select T_Secret from token where C_ID=".$c_id;
 		
@@ -67,6 +65,7 @@
 						case "getTheCar":  require "getTheCar.php"; break;
 						case "getAllCars": require "getAllCars.php"; break;
 						case "addTheCar" : require "anlyQrCode.php"; break;
+						case "delTheCar":  require "delTheCar.php"; break;
 						/* 汽车维护 end */
 						
 						/* 汽车加油 start */
