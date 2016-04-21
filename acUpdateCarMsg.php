@@ -33,7 +33,34 @@
 	{
 		$intMil = (int)$mil;
 		$intGas = (int)$gas;
-		if($intMil%15000==0 || $intGas<20 || $light==="0" || $eng==="0" || $tran=== "0"){
+		
+		$flag = 1;
+		$str = "";
+		if($intMil%15000 ===0 ){
+			$flag = 0;
+			$str .= "里程数 ";
+		}
+		else if($intGas<20){
+			$flag = 0;
+			$str .= "油量 ";
+		}
+		else if($light==="0"){
+			$flag = 0;
+			$str .= "车灯 ";
+		}
+		else if($eng==="0"){
+			$flag = 0;
+			$str .= "发动机 ";
+		}
+		else if($tran=== "0"){
+			$flag = 0;
+			$str .= "变速器 ";
+		}
+		
+		if($flag ===0){
+			
+			$str .= "出现异常，请尽快维护！";
+			
 			$app_key = '012fcdc77a63018fce8e617f';
 			$master_secret = '069f96cbec4b8c6c22c21c35';
 			
@@ -46,18 +73,14 @@
 			->addAlias($c_id)
 		//    ->addTag(array('tag1', 'tag2'))
 		//	->setNotificationAlert('')
-			->addAndroidNotification('请尽快维修', '车辆出现异常', 1, array("Car_ID"=>$car_id, "Car_Title"=>$car_title))
+			->addAndroidNotification($str , $car_title.'有异常', 1, array("Car_ID"=>$car_id, "Car_Title"=>$car_title))
 		 //   ->addIosNotification("Hi, iOS notification", 'iOS sound', JPush::DISABLE_BADGE, true, 'iOS category', array("key1"=>"value1", "key2"=>"value2"))
 		 //   ->setMessage("msg content", 'msg title', 'type', array("key1"=>"value1", "key2"=>"value2"))
 			->setOptions(100000, 3600, null, false)
 			->send();
-			
-			$sql1 = "";
 		}
-		else{
-			$obj = 0;
-		}
-	//	$obj['length'] = 0;
+	
+		$obj['length'] = 0;
 				
 		$array['data'] = $obj;
 		$array['msg'] = "更新成功";
