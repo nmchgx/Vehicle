@@ -7,11 +7,12 @@
 	
 	$PostType = $_GET['PostType'];
 	
-	if($PostType === "login" || $PostType === "register")
+	if($PostType === "login" || $PostType === "register" || $PostType=== "checkToken")
 	{
 		switch($PostType){
 			case "login":  require "login.php"; break;
 			case "register": require "register.php"; break;
+			case "checkToken": require "checkToken.php";break;
 		}
 		
 	}
@@ -35,7 +36,7 @@
 			$array['code'] = -1;
 			
 			$returnStr = JSON($array);	
-			
+			echo $returnStr;
 		}else{
 			$tsecret = "";
 			while($row=mysql_fetch_array($res)){
@@ -46,7 +47,6 @@
 				$obj['length'] = 0;
 				
 				$array['data'] = $obj;
-				$array['token'] = $_SESSION['token'];
 				$array['msg'] = "未登录";
 				$array['code'] = 0;
 				
@@ -81,7 +81,7 @@
 					
 					$array['data'] = $obj;
 					$array['msg'] = "登录状态失效，请重新登录";
-					$array['code'] = 0;
+					$array['code'] = -9;
 					
 					$returnStr = JSON($array);
 					echo $returnStr;
