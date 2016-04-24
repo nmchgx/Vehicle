@@ -11,7 +11,7 @@ require 'qiniu/autoload.php';
 use Qiniu\Auth;
 use Qiniu\Storage\UploadManager;
 
-function QiniuUpload($fileName) {
+function QiniuCreateToken() {
     $accessKey = '9Nebw9lHY9uV5M2FnxfKz4UcxuCt1neoAIxLdrHN';
     $secretKey = 'oKkCeXblqtVlRZ9TJFew_ByPBzaJrgUn8dAAgXFR';
 
@@ -22,7 +22,13 @@ function QiniuUpload($fileName) {
     $bucket = 'vehicle';
 
     // 生成上传 Token
-    $token = $auth->uploadToken($bucket);
+    $QiniuToken = $auth->uploadToken($bucket);
+
+    return $QiniuToken;
+}
+
+function QiniuUpload($fileName) {
+    $token = QiniuCreateToken();
 
     $filePath = $fileName;
     $key = $fileName;

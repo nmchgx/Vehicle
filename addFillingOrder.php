@@ -33,7 +33,7 @@ $data['Filling_Time'] = $Filling_Time;
 
 $qrcode['data'] = $data;
 $qrcode_json = JSON($qrcode);
-$timestamp = strtotime('+0 day');
+$timestamp = strtotime('now');
 $qrcode_name = "qrcode-filling-$C_ID-$Car_ID-$timestamp.png";
 $Order_QRCode = "http://7xst41.com2.z0.glb.clouddn.com/$qrcode_name";
 
@@ -51,6 +51,7 @@ $sqlResult=$mysql->query($sql);
 
 if(!empty($sqlResult)) {
     returnData("下单成功", 1);
+    unlink($qrcode_name);
 }else{
     returnData("下单失败", 0);
 }
