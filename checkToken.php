@@ -39,10 +39,12 @@
 				while($row=mysql_fetch_array($result))
 				{
 					$nickName = $row['C_NickName'];
+					$chead = $row['C_Head'];
 				}
 				$data['nickName'] = $nickName;
 				$data['token'] = $token;
 				$data['C_ID'] = $c_id;
+				$data['C_Head'] = $chead;
 				
 				$array['data'] = $data;
 				$array['msg'] = "登陆成功";

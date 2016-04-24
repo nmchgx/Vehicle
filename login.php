@@ -31,6 +31,7 @@
 			$psw = $row['C_Password'];
 			$nickName = $row['C_NickName'];
 			$cid = $row['C_ID'];
+			$chead = $row['C_Head'];
 		}
 		if($psw === "")
 		{
@@ -51,6 +52,7 @@
 				$data['token'] = $token;
 				$data['loginName'] = $loginName;
 				$data['C_ID'] = $cid;
+				$data['C_Head'] = $chead;
 				
 				$array['data'] = $data;
 				$array['msg'] = "登陆成功";
