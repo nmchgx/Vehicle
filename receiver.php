@@ -58,6 +58,8 @@
 					switch ($PostType) {
 						/* 用户管理 start */
 						case "logout":  require "logout.php"; break;
+						case "updateCustomerAvatar":  require "updateCustomerAvatar.php"; break;
+						case "getQiniuToken":  require "getQiniuToken.php"; break;
 						/* 用户管理 end */
 						
 						/* 汽车维护 start */
