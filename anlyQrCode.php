@@ -67,6 +67,7 @@
 				$obj['Car_Title'] = $title;
 				$obj['Car_LicensePlate'] = $carLicensePlate;
 				$obj['Car_EngineNum'] = $carEngineNum;
+				$obj['Car_Img'] = "";
 						
 				$array['data'] = $obj;
 				$array['msg'] = "添加车辆成功";
