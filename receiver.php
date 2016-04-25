@@ -1,18 +1,18 @@
 ﻿<?php
 	session_start();
 	
-	require "jsonHelper.php";		//json封装
-	require "connectSQL.php";
-	require "sqlHelper.php";
+	require "helper/jsonHelper.php";		//json封装
+	require "helper/connectSQL.php";
+	require "helper/sqlHelper.php";
 	
 	$PostType = $_GET['PostType'];
 	
 	if($PostType === "login" || $PostType === "register" || $PostType=== "checkToken")
 	{
 		switch($PostType){
-			case "login":  require "login.php"; break;
-			case "register": require "register.php"; break;
-			case "checkToken": require "checkToken.php";break;
+			case "login":  require "interface/login.php"; break;
+			case "register": require "interface/register.php"; break;
+			case "checkToken": require "interface/checkToken.php";break;
 		}
 		
 	}
@@ -57,24 +57,24 @@
 				if($tsecret === $token){
 					switch ($PostType) {
 						/* 用户管理 start */
-						case "logout":  require "logout.php"; break;
-						case "updateCustomerAvatar":  require "updateCustomerAvatar.php"; break;
-						case "getQiniuToken":  require "getQiniuToken.php"; break;
+						case "logout":  require "interface/logout.php"; break;
+						case "updateCustomerAvatar":  require "interface/updateCustomerAvatar.php"; break;
+						case "getQiniuToken":  require "interface/getQiniuToken.php"; break;
 						/* 用户管理 end */
 						
 						/* 汽车维护 start */
-						case "getMyCars":  require "getMyCars.php"; break;
-						case "getTheCar":  require "getTheCar.php"; break;
-						case "getAllCars": require "getAllCars.php"; break;
-						case "addTheCar" : require "anlyQrCode.php"; break;
-						case "delTheCar":  require "delTheCar.php"; break;
-						case "updateCarImg":  require "updateCarImg.php"; break;
+						case "getMyCars":  require "interface/getMyCars.php"; break;
+						case "getTheCar":  require "interface/getTheCar.php"; break;
+						case "getAllCars": require "interface/getAllCars.php"; break;
+						case "addTheCar" : require "interface/anlyQrCode.php"; break;
+						case "delTheCar":  require "interface/delTheCar.php"; break;
+						case "updateCarImg":  require "interface/updateCarImg.php"; break;
 						/* 汽车维护 end */
 						
 						/* 汽车加油 start */
-						case "addFillingOrder":  require "addFillingOrder.php"; break;
-						case "getFillingOrder":  require "getFillingOrder.php"; break;
-						case "cancelFillingOrder":  require "cancelFillingOrder.php"; break;
+						case "addFillingOrder":  require "interface/addFillingOrder.php"; break;
+						case "getFillingOrder":  require "interface/getFillingOrder.php"; break;
+						case "cancelFillingOrder":  require "interface/cancelFillingOrder.php"; break;
 						/* 汽车加油 end */
 					}
 				}
