@@ -94,6 +94,7 @@
 			
 			$arr['carMsg']['carmsg'] = $carmsg;
 			$arr['carMsg']['Car_ID'] = $row['Car_ID'];
+			$arr['carMsg']['Car_Logo'] = $row['Car_Logo'];
 			$arr['carMsg']['Car_Img'] = $row['Car_Img'];
 			
 			$data = $arr['carMsg'];
