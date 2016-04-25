@@ -68,6 +68,7 @@
 						case "getAllCars": require "getAllCars.php"; break;
 						case "addTheCar" : require "anlyQrCode.php"; break;
 						case "delTheCar":  require "delTheCar.php"; break;
+						case "updateCarImg":  require "updateCarImg.php"; break;
 						/* 汽车维护 end */
 						
 						/* 汽车加油 start */
