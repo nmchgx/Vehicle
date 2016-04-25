@@ -1,9 +1,9 @@
 <?php
-	require "jsonHelper.php";
-	require "connectSQL.php";
+	require "../helper/jsonHelper.php";
+	require "../helper/connectSQL.php";
 	ini_set("display_errors", "On");
 	error_reporting(E_ALL | E_STRICT);
-	require_once("JPush/JPush.php");
+	require_once("../JPush/JPush.php");
 	
 	$mil = $_POST['mil'];
 	$gas = $_POST['gas'];

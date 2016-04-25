@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>更新汽车数据</title>
-<link href="css/bootstrap.css" rel="stylesheet">
-<script src="js/jquery-1.11.2.min.js"></script> 
-<script src="js/bootstrap.js"></script>
-<script src="js/basic.js"></script>
-<script src="js/changeMysql.js"></script>
+<link href="../css/bootstrap.css" rel="stylesheet">
+<script src="../js/jquery-1.11.2.min.js"></script> 
+<script src="../js/bootstrap.js"></script>
+<script src="../js/basic.js"></script>
+<script src="../js/changeMysql.js"></script>
 <style type="text/css">
         html, body {
             /*此部分支持chrome，应该也支持firefox*/
