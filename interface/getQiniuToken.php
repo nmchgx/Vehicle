@@ -12,7 +12,7 @@ $C_ID = $_POST['c_id'];
 $result = null;
 $data = null;
 
-require 'Upload.php';
+require '../helper/Upload.php';
 $QiniuToken = QiniuCreateToken();
 
 if(!empty($QiniuToken)){
