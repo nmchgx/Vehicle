@@ -3,7 +3,6 @@ engines:
     enabled: true
     config:
       languages:
-      - javascript
       - php
   eslint:
     enabled: true
@@ -17,3 +16,14 @@ ratings:
   - interface/**/*
   - receiver.php
 exclude_paths:
+- phpqrcode/**/*
+- phpqrcode/*
+- qiniu/**/*
+- qiniu/*
+- JPush/**/*
+- JPush/*
+- helper/*
+- helper/**/*
+- picture/*
+- js/**/*
+- js/*

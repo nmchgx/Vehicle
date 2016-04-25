@@ -6,7 +6,7 @@
  * Time: 下午4:26
  */
 
-require 'qiniu/autoload.php';
+require '../qiniu/autoload.php';
 
 use Qiniu\Auth;
 use Qiniu\Storage\UploadManager;
