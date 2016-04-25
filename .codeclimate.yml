@@ -12,18 +12,18 @@ engines:
     enabled: true
 ratings:
   paths:
-  - interface/*
-  - interface/**/*
+  - interface/*.php
+  - interface/**/*.php
   - receiver.php
-exclude_paths:
-- phpqrcode/**/*
-- phpqrcode/*
-- qiniu/**/*
-- qiniu/*
-- JPush/**/*
-- JPush/*
-- helper/*
-- helper/**/*
-- picture/*
-- js/**/*
-- js/*
+# exclude_paths:
+# - phpqrcode/**/*
+# - phpqrcode/*
+# - qiniu/**/*
+# - qiniu/*
+# - JPush/**/*
+# - JPush/*
+# - helper/*
+# - helper/**/*
+# - picture/*
+# - js/**/*
+# - js/*
