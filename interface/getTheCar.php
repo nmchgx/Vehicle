@@ -63,8 +63,11 @@
 				$carmsg[6]['status'] = 2;
 			}
 			
+			setData(7,"发动机状态",$row['Car_EngIsOK']);
+			setData(8,"变速器状态",$row['Car_TranIsOK']);
+			setData(9,"车灯状态",$row['Car_LightIsOK']);
 			
-			
+			/*
 			$carmsg[7]['key'] = "发动机状态";
 			if($row['Car_EngIsOK'] ==="1"){
 				$carmsg[7]["value"] = '正常';
@@ -91,6 +94,7 @@
 				$carmsg[9]["value"] = '异常';
 				$carmsg[9]['status'] = 2;
 			}
+			*/
 			
 			$arr['carMsg']['carmsg'] = $carmsg;
 			$arr['carMsg']['Car_ID'] = $row['Car_ID'];
@@ -127,5 +131,14 @@
 	
 	echo $returnStr;
 	
-	
+	function setData ($index, $key, $status) {
+    $carmsg[$index]['key'] = $key;
+    
+	$carmsg[$index]['status']= $status;
+    if ($status === "1") {
+        $carmsg[$index]['value'] = '正常';
+    }else{
+		$carmsg[$index]['value'] = '异常';	
+	}
+	}
 ?>
