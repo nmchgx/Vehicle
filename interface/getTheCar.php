@@ -12,6 +12,7 @@
 	$result=mysql_query($sql);
 	
 	$returnStr;	
+	$carmsg;
 	if($result === false)
 	{	
 		$obj['length'] = 0;
@@ -24,7 +25,6 @@
 	}
 	else{
 		$data;
-		$carmsg;
 		$i = 0;
 		
 		while($row=mysql_fetch_array($result))
