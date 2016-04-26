@@ -30,7 +30,7 @@ if(!empty($sqlResult)){
     returnData("获取成功", 1, $data);
 }
 else{
-    returnData("获取失败", 0);
+    returnData("获取失败", 0, null);
 }
 
 function returnData ($msg, $code, $data) {

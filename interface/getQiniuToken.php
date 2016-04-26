@@ -7,12 +7,10 @@
  * Function:
  */
 
-$C_ID = $_POST['c_id'];
-
 $result = null;
 $data = null;
 
-require '../helper/Upload.php';
+require 'Upload.php';
 $QiniuToken = QiniuCreateToken();
 
 if(!empty($QiniuToken)){
@@ -21,7 +19,7 @@ if(!empty($QiniuToken)){
     returnData("获取成功", 1, $data);
 }
 else{
-    returnData("获取失败", 0);
+    returnData("获取失败", 0, null);
 }
 
 function returnData ($msg, $code, $data) {
