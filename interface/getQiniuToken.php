@@ -10,7 +10,8 @@
 $result = null;
 $data = null;
 
-require 'Upload.php';
+chdir(dirname(__FILE__));
+require "../helper/upload.php";
 $QiniuToken = QiniuCreateToken();
 
 if(!empty($QiniuToken)){

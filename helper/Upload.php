@@ -6,7 +6,8 @@
  * Time: 下午4:26
  */
 
-require '../qiniu/autoload.php';
+chdir(dirname(__FILE__));
+require "../qiniu/autoload.php";
 
 use Qiniu\Auth;
 use Qiniu\Storage\UploadManager;
@@ -14,7 +15,7 @@ use Qiniu\Storage\UploadManager;
 function QiniuCreateToken() {
     $accessKey = '9Nebw9lHY9uV5M2FnxfKz4UcxuCt1neoAIxLdrHN';
     $secretKey = 'oKkCeXblqtVlRZ9TJFew_ByPBzaJrgUn8dAAgXFR';
-    echo $accessKey;
+
     // 构建鉴权对象
     $auth = new Auth($accessKey, $secretKey);
 

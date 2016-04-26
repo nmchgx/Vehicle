@@ -7,6 +7,7 @@
  * Function: 添加汽车加油订单
  */
 
+chdir(dirname(__FILE__));
 include '../phpqrcode/phpqrcode.php';
 
 $C_ID = $_POST['c_id'];
@@ -40,6 +41,7 @@ $Order_QRCode = "http://7xst41.com2.z0.glb.clouddn.com/$qrcode_name";
 QRcode::png($qrcode_json, $qrcode_name, QR_ECLEVEL_L, 5, 0);
 
 // 七牛上传
+chdir(dirname(__FILE__));
 require '../helper/Upload.php';
 QiniuUpload($qrcode_name);
 
