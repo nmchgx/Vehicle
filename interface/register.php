@@ -4,14 +4,9 @@
 	$nickName = $_POST["nickName"];
 	
 	$returnStr;
+	$obj['length'] = 0;
 	if(!preg_match("/^[0-9a-zA-Z]{4,26}$/",$loginName)){
-		$obj['length'] = 0;
-		
-        $array['data'] = $obj;
-		$array['msg'] = "用户名须由4-26位的字母和数字组成";
-		$array['code'] = 0;
-			
-		$returnStr = JSON($array);
+		returnData("用户名须由4-26位的字母和数字组成", 0, $obj);
 	}
 	else{
 		$sql = "select * from customer where C_LoginName = '".$loginName."'";
@@ -19,13 +14,7 @@
 		
 		if($result === false)
 		{	
-			$obj['length'] = 0;
-		
-			$array['data'] = $obj;
-			$array['msg'] = "连接出错";
-			$array['code'] = -1;
-			
-			$returnStr = JSON($array);
+			returnData("连接出错", -1, $obj);
 		}
 		else{
 			
@@ -39,34 +28,29 @@
 				$result1=mysql_query($addSql);
 				
 				if($result1 === false){
-					$obj['length'] = 0;
-					
-					$array['data'] = $obj;
-					$array['msg'] = "连接出错";
-					$array['code'] = -1;
-					
-					$returnStr = JSON($array);
+					returnData("连接出错", -1, $obj);
 				}
 				else{
-					$obj['length'] = 0;
-					
-					$array['data'] = $obj;
-					$array['msg'] = "添加用户成功";
-					$array['code'] = 1;
-					
-					$returnStr = JSON($array);
+					returnData("添加用户成功", 1, $obj);
 				}
 			}
 			else{
-				$obj['length'] = 0;
-				
-				$array['data'] = $obj;
-				$array['msg'] = "用户名已存在";
-				$array['code'] = 0;
-					
-				$returnStr = JSON($array);
+				returnData("用户名已存在", 0, $obj);
 			}
 		}
+		
+		// 释放资源
+    	mysql_free_result($result);
 	}
-	echo $returnStr;
+	
+	
+	
+	function returnData ($msg, $code, $data) {
+		$array['msg'] = $msg;
+		$array['code'] = $code;
+		$array['data'] = $data;
+	
+		$returnStr = JSON($array);
+		echo $returnStr;
+	}
 ?>
