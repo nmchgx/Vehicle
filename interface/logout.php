@@ -6,29 +6,27 @@
 	$result=mysql_query($sql);
 	
 	$returnStr;
+	$array;
+	$obj['length'] = 0;
+	
 	if($result === false)
 	{	
-		$obj['length'] = 0;
-		
-		$array['data'] = $obj;
-		$array['msg'] = "连接出错";
-		$array['code'] = -1;
-		
-		$returnStr = JSON($array);
+		returnData("连接出错", -1, $obj);
 	}
 	else
-	{
-		$obj['length'] = 0;
-				
-		$array['data'] = $obj;
-		$array['msg'] = "注销成功";
-		$array['code'] = 1;
-				
-		$returnStr = JSON($array);
+	{			
+		returnData("注销成功", 1, $obj);
 	}
 	
 	// 释放资源
     mysql_free_result($result);
 	
-	echo $returnStr;
+	function returnData ($msg, $code, $data) {
+		$array['msg'] = $msg;
+		$array['code'] = $code;
+		$array['data'] = $data;
+	
+		$returnStr = JSON($array);
+		echo $returnStr;
+	}
 ?>
