@@ -42,7 +42,7 @@ QRcode::png($qrcode_json, $qrcode_name, QR_ECLEVEL_L, 5, 0);
 
 // 七牛上传
 chdir(dirname(__FILE__));
-require '../helper/Upload.php';
+require 'Upload.php';
 QiniuUpload($qrcode_name);
 
 // 数据库操作
