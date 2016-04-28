@@ -34,7 +34,7 @@ function QiniuUpload($fileName) {
     $filePath = $fileName;
     $key = $fileName;
     $uploadMgr = new UploadManager();
-    echo $fileName;
+//    echo $fileName;
     list($ret, $err) = $uploadMgr->putFile($token, $key, $filePath);
 //    echo "\n====> putFile result: \n";
 //    if ($err !== null) {
