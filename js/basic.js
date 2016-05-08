@@ -1,7 +1,7 @@
 // JavaScript Document
 //var BASE_URL = "http://139.129.27.123:8001/Vehicle/";
 //var BASE_URL = "http://localhost:8001/Vehicle/interface/";
-var BASE_URL = "http://localhost:8010/Vehicle/interface/";
+var BASE_URL = "http://139.129.27.123:8010/Vehicle/interface/";
 
 $.post = function(a, b, c) {
 	$.ajax({
