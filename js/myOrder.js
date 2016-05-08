@@ -1,16 +1,14 @@
 // JavaScript Document
 
-var order_id, c_id, car_id;
+var Order_Key;
 
 $(document).ready(function() { 
 	var Request = new Object();
 	Request = GetRequest();
 	
-	order_id = Request["order_id"];
-	c_id = Request["c_id"];
-	car_id = Request["car_id"];
+	Order_Key = Request["Order_Key"];
 	
-	$.post(BASE_URL + "getOrderMsg.php", {order_id:order_id, c_id:c_id, car_id:car_id}, function(data) {
+	$.post(BASE_URL + "getOrderMsg.php", {Order_Key:Order_Key}, function(data) {
 		
 		$("tr:not(:first)").empty("");
 		$("#orderTab").css("margin-top", window.screen.availHeight/10);
