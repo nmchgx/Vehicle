@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body {
+   /*此部分支持chrome，应该也支持firefox*/
+   background: rgb(246,248,249);
+   background: url('../picture/2457331_114041197651.jpg') no-repeat center fixed;
+   background-attachment: fixed;
+   background-size: 100% 100%;
+   /*以下是IE部分，使用滤镜*/
+   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='picture/2457331_114041197651.jpg',sizingMethod='scale');
+   background-repeat: no-repeat;
+   background-positon: 100%, 100%;
+   font: normal 18px tahoma, arial, verdana, sans-serif;
+   margin: 0;
+   padding: 0;
+   border: 0 none;
+   overflow: hidden;
+   height: 100%;
+}
+#dowebok{
+	margin-left:auto;
+}
+#content{
+	display:table;
+	color:#EEEEEE;
+	margin:auto;
+}
+#orderTab th{
+	font:"黑体","Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size:16px;
+	text-align:center;
+	color:#111111;
+}
+#orderTab td{
+	font: "宋体",Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-size:14px;
+	text-align:center;
+	color:#222222;
+}
