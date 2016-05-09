@@ -3,7 +3,7 @@
 	require "../helper/connectSQL.php";
 	$Order_Key = $_POST['Order_Key'];
 	
-	$sql = "SELECT C_NickName, Car_Brand, Car_Model, Car_LicensePlate, Filling_Type, Filling_Amount, Filling_Total, Filling_Station, Filling_Time, Order_Status FROM car, customer, orders WHERE car.Car_ID=orders.Car_ID AND customer.C_ID=orders.C_ID AND Orders.Order_Key =".$Order_Key;
+	$sql = "SELECT C_NickName, Car_Brand, Car_Model, Car_LicensePlate, Filling_Type, Filling_Amount, Filling_Total, Filling_Station, Filling_Time, Order_Status FROM car, customer, orders WHERE car.Car_ID=orders.Car_ID AND customer.C_ID=orders.C_ID AND Orders.Order_Key ='".$Order_Key."'";
 	
 	$result=mysql_query($sql);
 	
