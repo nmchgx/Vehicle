@@ -4,6 +4,11 @@
 	ini_set("display_errors", "On");
 	error_reporting(E_ALL | E_STRICT);
 	require_once("../JPush/JPush.php");
+	require_once("../JPush/core/PushPayload.php");
+	require_once("../JPush/core/ReportPayload.php");
+	require_once("../JPush/core/DevicePayload.php");
+	require_once("../JPush/core/SchedulePayload.php");
+	require_once("../JPush/core/JPushException.php");
 	
 	$mil = $_POST['mil'];
 	$gas = $_POST['gas'];
