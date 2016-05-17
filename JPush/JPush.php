@@ -1,10 +1,23 @@
 <?php
-chdir(dirname(__FILE__));
-require_once("core/PushPayload.php");
-require_once("core/ReportPayload.php");
-require_once("core/DevicePayload.php");
-require_once("core/SchedulePayload.php");
-require_once("core/JPushException.php");
+function classLoader($class)
+{
+    $path = str_replace('\\', DIRECTORY_SEPARATOR, $class);
+    $file = __DIR__ . '/src/' . $path . '.php';
+
+    if (file_exists($file)) {
+        require_once $file;
+    }
+}
+spl_autoload_register('classLoader');
+
+require_once  __DIR__ . '/src/Qiniu/functions.php';
+
+
+require_once( __DIR__ . "core/PushPayload.php");
+require_once( __DIR__ . "core/ReportPayload.php");
+require_once( __DIR__ . "core/DevicePayload.php");
+require_once( __DIR__ . "core/SchedulePayload.php");
+require_once( __DIR__ . "core/JPushException.php");
 
 class JPush {
     const DISABLE_SOUND = "_disable_Sound";
