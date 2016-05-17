@@ -34,8 +34,15 @@ function submitIt(){
 	var car_id=$("#car_id").val(); //获取Select选择的Value 
 	var car_title=$("#car_id").find("option:selected").text(); 
 	
+	$.post(BASE_URL + "acUpdateCarMsg.php", {c_id:c_id, mil:mil, gas:gas, light:light, eng:eng, tran:tran, car_id:car_id, car_title:car_title}, function(data) {
 	
-	$.post(BASE_URL + "acUpdateCarMsg.php", {c_id:c_id, mil:mil, gas:gas, light:light, eng:eng, tran:tran, car_id:car_id, car_title:car_title}, function(data) {	
-		alert(data.data);
+		if(data.code == 1){			
+			
+			alert(data.msg);
+		}
+		else alert(data.msg);		
 	});
+	
+	alert("已推送");
+	
 }
