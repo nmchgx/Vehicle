@@ -13,11 +13,11 @@
         html, body {
             /*此部分支持chrome，应该也支持firefox*/
             background: rgb(246,248,249);
-            background: url('picture/bg.jpg') no-repeat center fixed;
+            background: url('../picture/bg.jpg') no-repeat center fixed;
             background-attachment: fixed;
             background-size: 100% 100%;
             /*以下是IE部分，使用滤镜*/
-            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='picture/bg.jpg',sizingMethod='scale');
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../picture/bg.jpg',sizingMethod='scale');
             background-repeat: no-repeat;
             background-positon: 100%, 100%;
             font: normal 18px tahoma, arial, verdana, sans-serif;
