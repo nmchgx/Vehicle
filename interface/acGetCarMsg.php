@@ -1,6 +1,6 @@
 <?php
-	require "jsonHelper.php";
-	require "connectSQL.php";
+	require "../helper/jsonHelper.php";
+	require "../helper/connectSQL.php";
 	$C_LoginName = $_POST['account'];
 	
 	$sql = "SELECT Car_ID, Car_Brand, Car_Model, car.C_ID FROM car, customer WHERE car.C_ID=customer.C_ID AND C_LoginName ='".$C_LoginName."'";
