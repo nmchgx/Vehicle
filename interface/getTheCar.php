@@ -134,11 +134,12 @@
 	function setData ($index, $key, $status, $carmsg) {
     $carmsg[$index]['key'] = $key;
     
-	$carmsg[$index]['status']= $status;
     if ($status === "1") {
         $carmsg[$index]['value'] = '正常';
+		$carmsg[$index]['status']= $status;
     }else{
-		$carmsg[$index]['value'] = '异常';	
+		$carmsg[$index]['value'] = '异常';
+		$carmsg[$index]['status']= 2;
 	}
 	return $carmsg;
 	}
