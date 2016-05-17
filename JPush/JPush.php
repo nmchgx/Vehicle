@@ -1,5 +1,5 @@
 <?php
-
+chdir(dirname(__FILE__));
 require_once("core/PushPayload.php");
 require_once("core/ReportPayload.php");
 require_once("core/DevicePayload.php");
