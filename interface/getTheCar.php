@@ -1,6 +1,6 @@
 <?php
-	//require "jsonHelper.php";
-	//require "connectSQL.php";
+	//require "../helper/jsonHelper.php";
+	//require "../helper/connectSQL.php";
 	
 	$Car_ID = $_POST['Car_ID'];
 	
@@ -41,9 +41,6 @@
 			$carmsg[3]['key'] =  "发动机号";
 			$carmsg[3]["value"] =  $row['Car_EngineNum'];
 			$carmsg[3]['status'] = 0;
-			$carmsg[10]['key'] =  "车架号";
-			$carmsg[10]["value"] =  $row['Car_VinNo'];
-			$carmsg[10]['status'] = 0;
 			$carmsg[4]['key'] = "车身级别";
 			$carmsg[4]["value"] = $row['Car_BodyLevel'];
 			$carmsg[4]['status'] = 0;
@@ -69,6 +66,10 @@
 			$carmsg = setData(7,"发动机状态",$row['Car_EngIsOK'], $carmsg);
 			$carmsg = setData(8,"变速器状态",$row['Car_TranIsOK'], $carmsg);
 			$carmsg = setData(9,"车灯状态",$row['Car_LightIsOK'], $carmsg);
+			
+			$carmsg[10]['key'] =  "车架号";
+			$carmsg[10]["value"] =  $row['Car_VinNo'];
+			$carmsg[10]['status'] = 0;
 			
 			/*
 			$carmsg[7]['key'] = "发动机状态";
