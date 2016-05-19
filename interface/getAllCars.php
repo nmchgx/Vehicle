@@ -6,7 +6,7 @@
 	//$loginName = 'Yann';
 	//$c_id = 1;
 	
-	$sql = "SELECT Car_ID, Car_Brand, Car_Model, Car_LicensePlate, Car_EngineNum  FROM car WHERE C_ID = ".$c_id;
+	$sql = "SELECT Car_ID, Car_Brand, Car_Model, Car_LicensePlate, Car_EngineNum, Car_VinNo FROM car WHERE C_ID = ".$c_id;
 	
 	$result=mysql_query($sql);
 	
@@ -30,6 +30,7 @@
 			$data[$i]['Car_ID'] = $row['Car_ID'];
 			$data[$i]['Car_Title'] = $row['Car_Brand'].$row['Car_Model'];
 			$data[$i]['Car_LicensePlate'] = $row['Car_LicensePlate'];
+			$data[$i]['Car_VinNo'] = $row['Car_VinNo'];
 			$data[$i]['Car_EngineNum'] = $row['Car_EngineNum'];
 			$i++;
 		}

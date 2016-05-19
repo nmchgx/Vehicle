@@ -41,6 +41,9 @@
 			$carmsg[3]['key'] =  "发动机号";
 			$carmsg[3]["value"] =  $row['Car_EngineNum'];
 			$carmsg[3]['status'] = 0;
+			$carmsg[10]['key'] =  "车架号";
+			$carmsg[10]["value"] =  $row['Car_VinNo'];
+			$carmsg[10]['status'] = 0;
 			$carmsg[4]['key'] = "车身级别";
 			$carmsg[4]["value"] = $row['Car_BodyLevel'];
 			$carmsg[4]['status'] = 0;

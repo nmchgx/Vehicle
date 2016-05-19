@@ -68,13 +68,15 @@
 			
 			$Car_LicensePlate = "";
 			$Car_EngineNum = "";
-			$sql = "SELECT Car_LicensePlate, Car_EngineNum  FROM car WHERE Car_ID = ".$car_id;
+			$Car_VinNo = "";
+			$sql = "SELECT Car_LicensePlate, Car_EngineNum, Car_VinNo FROM car WHERE Car_ID = ".$car_id;
 			$result1=mysql_query($sql);
 			
 			while($row=mysql_fetch_array($result1))
 			{
 				$Car_LicensePlate= $row['Car_LicensePlate'];
 				$Car_EngineNum = $row['Car_EngineNum'];
+				$Car_VinNo = $row['Car_VinNo'];
 			}
 			// 释放资源
    			mysql_free_result($result1);
@@ -91,7 +93,7 @@
 			->addAlias($c_id)
 		//    ->addTag(array('tag1', 'tag2'))
 		//	->setNotificationAlert('')
-			->addAndroidNotification($str , $car_title.'有异常', 1, array("Car_ID"=>$car_id, "Car_Title"=>$car_title, "Car_LicensePlate"=>$Car_LicensePlate, "Car_EngineNum"=>$Car_EngineNum))
+			->addAndroidNotification($str , $car_title.'有异常', 1, array("Car_ID"=>$car_id, "Car_Title"=>$car_title, "Car_LicensePlate"=>$Car_LicensePlate, "Car_EngineNum"=>$Car_EngineNum, "Car_VinNo"=>$Car_VinNo))
 		 //   ->addIosNotification("Hi, iOS notification", 'iOS sound', JPush::DISABLE_BADGE, true, 'iOS category', array("key1"=>"value1", "key2"=>"value2"))
 		 //   ->setMessage("msg content", 'msg title', 'type', array("key1"=>"value1", "key2"=>"value2"))
 			->setOptions(100000, 3600, null, false)
