@@ -41,35 +41,36 @@
 			$carmsg[3]['key'] =  "发动机号";
 			$carmsg[3]["value"] =  $row['Car_EngineNum'];
 			$carmsg[3]['status'] = 0;
-			$carmsg[4]['key'] = "车身级别";
-			$carmsg[4]["value"] = $row['Car_BodyLevel'];
+			$carmsg[4]['key'] =  "车架号";
+			$carmsg[4]["value"] =  $row['Car_VinNo'];
 			$carmsg[4]['status'] = 0;
-			$carmsg[5]['key'] = "里程数";
-			$carmsg[5]["value"] = $row['Car_Mileage']."km";
+			$carmsg[5]['key'] = "车身级别";
+			$carmsg[5]["value"] = $row['Car_BodyLevel'];
+			$carmsg[5]['status'] = 0;
+			$carmsg[6]['key'] = "里程数";
+			$carmsg[6]["value"] = $row['Car_Mileage']."km";
 			$li = (int)$row['Car_Mileage'];
 			if($li%15000 === 0){
-				$carmsg[5]['status'] = 2;
-			}
-			else{
-				$carmsg[5]['status'] = 1;
-			}
-			
-			$carmsg[6]['key'] = "油量";
-			$is = (int)$row['Car_GasVol'];
-			$carmsg[6]["value"] = $row['Car_GasVol']."%";
-			if($is > 20){
-				$carmsg[6]['status'] = 1;
-			}else{
 				$carmsg[6]['status'] = 2;
 			}
+			else{
+				$carmsg[6]['status'] = 1;
+			}
 			
-			$carmsg = setData(7,"发动机状态",$row['Car_EngIsOK'], $carmsg);
-			$carmsg = setData(8,"变速器状态",$row['Car_TranIsOK'], $carmsg);
-			$carmsg = setData(9,"车灯状态",$row['Car_LightIsOK'], $carmsg);
+			$carmsg[7]['key'] = "油量";
+			$is = (int)$row['Car_GasVol'];
+			$carmsg[7]["value"] = $row['Car_GasVol']."%";
+			if($is > 20){
+				$carmsg[7]['status'] = 1;
+			}else{
+				$carmsg[7]['status'] = 2;
+			}
 			
-			$carmsg[10]['key'] =  "车架号";
-			$carmsg[10]["value"] =  $row['Car_VinNo'];
-			$carmsg[10]['status'] = 0;
+			$carmsg = setData(8,"发动机状态",$row['Car_EngIsOK'], $carmsg);
+			$carmsg = setData(9,"变速器状态",$row['Car_TranIsOK'], $carmsg);
+			$carmsg = setData(10,"车灯状态",$row['Car_LightIsOK'], $carmsg);
+			
+			
 			
 			/*
 			$carmsg[7]['key'] = "发动机状态";
