@@ -30,7 +30,7 @@
 			$logo_url = $row['Logo_Url'];
 		}
 		
-		$sql1 = "insert into car(C_ID, Car_Brand, Car_Logo, Car_Model, Car_LicensePlate, Car_EngineNum, Car_BodyLevel, Car_Mileage, Car_GasVol, Car_EngIsOK, Car_TranIsOK, Car_LightIsOK) values (".$c_id.",'".$json->{"Brand"}."','".$logo_url."','".$json->{"Model"}."','".$json->{"License"}."','".$json->{"EngNum"}."','".$json->{"BodyLevel"}."',".$json->{"Mil"}.",".$json->{"GasVol"}.",".$json->{"EngOK"}.",".$json->{"TranOK"}.",".$json->{"LightOK"}.")";
+		$sql1 = "insert into car(C_ID, Car_Brand, Car_Logo, Car_Model, Car_LicensePlate, Car_EngineNum, Car_BodyLevel, Car_Mileage, Car_GasVol, Car_EngIsOK, Car_TranIsOK, Car_LightIsOK, Car_VinNo) values (".$c_id.",'".$json->{"Brand"}."','".$logo_url."','".$json->{"Model"}."','".$json->{"License"}."','".$json->{"EngNum"}."','".$json->{"BodyLevel"}."',".$json->{"Mil"}.",".$json->{"GasVol"}.",".$json->{"EngOK"}.",".$json->{"TranOK"}.",".$json->{"LightOK"}.",'".$json->{"VinNo"}."')";
 		
 		$result1=mysql_query($sql1);
 		if($result1 === false)
@@ -61,12 +61,14 @@
 					$title = $row['Car_Brand'].$row['Car_Model'];
 					$carLicensePlate = $row['Car_LicensePlate'];
 					$carEngineNum = $row['Car_EngineNum'];
+					$Car_VinNo = $row['Car_VinNo'];
 				}
 				
 				$obj['Car_ID'] = $carid;
 				$obj['Car_Title'] = $title;
 				$obj['Car_LicensePlate'] = $carLicensePlate;
 				$obj['Car_EngineNum'] = $carEngineNum;
+				$obj['Car_VinNo'] = $Car_VinNo;
 				$obj['Car_Img'] = "";
 						
 				$array['data'] = $obj;
