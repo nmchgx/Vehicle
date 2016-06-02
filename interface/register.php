@@ -27,12 +27,29 @@
 				$addSql = "insert into customer(C_LoginName, C_Password, C_NickName) values ('".$loginName."','".$password."','".$nickName."')";
 				$result1=mysql_query($addSql);
 				
+				$sql = "select C_ID from customer where C_LoginName = '".$loginName."'";
+				$result2=mysql_query($sql);
+				while($row=mysql_fetch_array($result2))
+				{
+					$ID = $row['C_ID'];
+				}
+				echo $ID;
+				
+				$sql1 = "insert into car(C_ID, Car_Brand, Car_Logo, Car_Model, Car_LicensePlate, Car_EngineNum, Car_BodyLevel, Car_Mileage, Car_GasVol, Car_EngIsOK, Car_TranIsOK, Car_LightIsOK, Car_VinNo) values (".$ID.",'奥迪','http://7xst41.com2.z0.glb.clouddn.com/Audi.png','A4L','粤YM5610','G4GA-5B257630','四门四座',1200,76,1,1,1,'LBEPCCAK45X116238')";
+		
+				$result3=mysql_query($sql1);
+				
+				$sql2 = "insert into car(C_ID, Car_Brand, Car_Logo, Car_Model, Car_LicensePlate, Car_EngineNum, Car_BodyLevel, Car_Mileage, Car_GasVol, Car_EngIsOK, Car_TranIsOK, Car_LightIsOK, Car_VinNo) values (".$ID.",'吉普','http://7xst41.com2.z0.glb.clouddn.com/Jeep.png','牧马人','浙JA1285','1634814','四门四座',1800,82,1,1,1,'91110095')";
+		
+				$result4=mysql_query($sql2);
+				
 				if($result1 === false){
 					returnData("连接出错", -1, $obj);
 				}
 				else{
 					returnData("添加用户成功", 1, $obj);
 				}
+				mysql_free_result($result1);
 			}
 			else{
 				returnData("用户名已存在", 0, $obj);
