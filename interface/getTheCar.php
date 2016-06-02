@@ -5,7 +5,7 @@
 	$Car_ID = $_POST['Car_ID'];
 	
 	//$Car_ID = $_GET['Car_ID'];
-	//$Car_ID = 1;
+	//$Car_ID = 4;
 	
 	$sql = "SELECT * FROM car WHERE Car_ID =".$Car_ID;
 	
@@ -66,9 +66,9 @@
 				$carmsg[7]['status'] = 2;
 			}
 			
-			$carmsg = setData(8,"发动机状态",$row['Car_EngIsOK'], $carmsg);
-			$carmsg = setData(9,"变速器状态",$row['Car_TranIsOK'], $carmsg);
-			$carmsg = setData(10,"车灯状态",$row['Car_LightIsOK'], $carmsg);
+			$carmsg = setData(8,"发动机状态",$row['Car_EngIsOK'],$row['Car_EngMsg'], $carmsg);
+			$carmsg = setData(9,"变速器状态",$row['Car_TranIsOK'], $row['Car_TranMsg'], $carmsg);
+			$carmsg = setData(10,"车灯状态",$row['Car_LightIsOK'],$row['Car_LightMsg'], $carmsg);
 			
 			
 			
@@ -136,14 +136,14 @@
 	
 	echo $returnStr;
 	
-	function setData ($index, $key, $status, $carmsg) {
+	function setData ($index, $key, $status,$msg, $carmsg) {
     $carmsg[$index]['key'] = $key;
     
     if ($status === "1") {
-        $carmsg[$index]['value'] = '正常';
+        $carmsg[$index]['value'] = '';
 		$carmsg[$index]['status']= $status;
     }else{
-		$carmsg[$index]['value'] = '异常';
+		$carmsg[$index]['value'] = $msg;
 		$carmsg[$index]['status']= 2;
 	}
 	return $carmsg;
