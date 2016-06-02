@@ -20,7 +20,7 @@
 		$obj['length'] = 0;
 		
 		$array['data'] = $obj;
-		$array['msg'] = "连接出错";
+		$array['msg'] = "二维码格式有误";
 		$array['code'] = -1;
 		
 		$returnStr = JSON($array);
@@ -38,7 +38,7 @@
 			$obj['length'] = 0;
 			
 			$array['data'] = $obj;
-			$array['msg'] = "连接出错";
+			$array['msg'] = "二维码格式有误";
 			$array['code'] = -1;
 			
 			$returnStr = JSON($array);
@@ -51,7 +51,7 @@
 				$obj['length'] = 0;
 				
 				$array['data'] = $obj;
-				$array['msg'] = "连接出错";
+				$array['msg'] = "二维码格式有误";
 				$array['code'] = -1;
 				
 				$returnStr = JSON($array);
