@@ -33,7 +33,6 @@
 				{
 					$ID = $row['C_ID'];
 				}
-				echo $ID;
 				
 				$sql1 = "insert into car(C_ID, Car_Brand, Car_Logo, Car_Model, Car_LicensePlate, Car_EngineNum, Car_BodyLevel, Car_Mileage, Car_GasVol, Car_EngIsOK, Car_TranIsOK, Car_LightIsOK, Car_VinNo) values (".$ID.",'奥迪','http://7xst41.com2.z0.glb.clouddn.com/Audi.png','A4L','粤YM5610','G4GA-5B257630','四门四座',1200,76,1,1,1,'LBEPCCAK45X116238')";
 		
