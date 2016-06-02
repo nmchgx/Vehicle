@@ -27,6 +27,9 @@
 	}
 	else
 	{
+		$sql1 = "DELETE FROM orders WHERE Car_ID =".$Car_ID. " AND C_ID=".$c_id;
+		$result1=mysql_query($sql1);
+		
 		$obj['length'] = 0;
 				
 		$array['data'] = $obj;
