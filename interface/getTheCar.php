@@ -5,7 +5,7 @@
 	$Car_ID = $_POST['Car_ID'];
 	
 	//$Car_ID = $_GET['Car_ID'];
-	//$Car_ID = 4;
+	//$Car_ID = 6;
 	
 	$sql = "SELECT * FROM car WHERE Car_ID =".$Car_ID;
 	
