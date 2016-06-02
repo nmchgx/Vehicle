@@ -66,9 +66,9 @@
 				$carmsg[7]['status'] = 2;
 			}
 			
-			$carmsg = setData(8,"发动机状态",$row['Car_EngIsOK'],$row['Car_EngMsg'], $carmsg);
-			$carmsg = setData(9,"变速器状态",$row['Car_TranIsOK'], $row['Car_TranMsg'], $carmsg);
-			$carmsg = setData(10,"车灯状态",$row['Car_LightIsOK'],$row['Car_LightMsg'], $carmsg);
+			$carmsg = setData(8,"发动机",$row['Car_EngIsOK'],$row['Car_EngMsg'], $carmsg);
+			$carmsg = setData(9,"变速器",$row['Car_TranIsOK'], $row['Car_TranMsg'], $carmsg);
+			$carmsg = setData(10,"车灯",$row['Car_LightIsOK'],$row['Car_LightMsg'], $carmsg);
 			
 			
 			
