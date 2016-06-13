@@ -24,7 +24,7 @@ $timestamp = strtotime('now');
 $Order_Key = "$C_ID-$Car_ID-$timestamp";
 $qrcode_name = "qrcode-filling-$Order_Key.png";
 $Order_QRCode = "http://7xst41.com2.z0.glb.clouddn.com/$qrcode_name";
-$qrcode_str = "http://139.129.27.123:8010/Vehicle/H5/myOrder.html?Order_Key=$Order_Key";
+$qrcode_str = "http://139.129.27.123/Vehicle/H5/myOrder.html?Order_Key=$Order_Key";
 
 QRcode::png($qrcode_str, $qrcode_name, QR_ECLEVEL_L, 5, 0);
 
