@@ -75,7 +75,7 @@
 						case "addFillingOrder":  require "interface/addFillingOrder.php"; break;
 						case "getFillingOrder":  require "interface/getFillingOrder.php"; break;
 						case "cancelFillingOrder":  require "interface/cancelFillingOrder.php"; break;
-						case "getAcpTN":  require "interface/getAcpTN.php"; break;
+						case "getOrderUpacpTN":  require "interface/getOrderUpacpTN.php"; break;
 						/* 汽车加油 end */
 					}
 				}
