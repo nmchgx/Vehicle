@@ -59,7 +59,8 @@ if (!AcpService::validate ($result_arr) ){
 
 if ($result_arr["respCode"] == "00"){
 	//成功
-	$data['tn'] = $result_arr["tn"];
+//	$data['tn'] = $result_arr["tn"];
+	$data['tn'] = 'EFACELIUB123584';
 	returnData("获取成功", 1, $data);
 } else {
 	//其他应答码做以失败处理
