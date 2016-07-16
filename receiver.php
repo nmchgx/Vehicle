@@ -76,6 +76,7 @@
 						case "getFillingOrder":  require "interface/getFillingOrder.php"; break;
 						case "cancelFillingOrder":  require "interface/cancelFillingOrder.php"; break;
 						case "getOrderUpacpTN":  require "interface/getOrderUpacpTN.php"; break;
+						case "updateOrderPayStatus":  require "interface/updateOrderPayStatus.php"; break;
 						/* 汽车加油 end */
 					}
 				}
