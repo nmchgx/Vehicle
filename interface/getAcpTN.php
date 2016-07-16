@@ -67,13 +67,13 @@ if ($result_arr["respCode"] == "00"){
 }
 	
 function returnData ($msg, $code, $data) {
-	$array['msg'] = $msg;
-	$array['code'] = $code;
+	$result['msg'] = $msg;
+	$result['code'] = $code;
 	if ($data) {
 		$result['data'] = $data;
 	}
 	
-	$returnStr = JSON($array);
+	$returnStr = JSON($result);
 	echo $returnStr;
 }
 ?>
