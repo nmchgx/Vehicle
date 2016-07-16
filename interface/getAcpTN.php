@@ -47,24 +47,25 @@ $url = SDK_App_Request_Url;
 
 $result_arr = AcpService::post ($params,$url);
 if(count($result_arr)<=0) { //没收到200应答的情况
-	returnData("未收到应答", 0, null);
+//	returnData("未收到应答", 0, null);
 	return;
 }
 
 
 if (!AcpService::validate ($result_arr) ){
-	returnData("应答报文验签失败", 0, null);
+//	returnData("应答报文验签失败", 0, null);
 	return;
 }
 
 if ($result_arr["respCode"] == "00"){
 	//成功
-//	$data['tn'] = $result_arr["tn"];
-	$data['tn'] = 'EFACELIUB123584';
-	returnData("获取成功", 1, $data);
+	$data['tn'] = $result_arr["tn"];
+//	$data['tn'] = 'EFACELIUB123584';
+	echo $result_arr["tn"];
+//	returnData("获取成功", 1, $data);
 } else {
 	//其他应答码做以失败处理
-	returnData($result_arr["respMsg"], 0, null);
+//	returnData($result_arr["respMsg"], 0, null);
 }
 	
 function returnData ($msg, $code, $data) {
