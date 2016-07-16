@@ -84,7 +84,7 @@ function returnData ($msg, $code, $data) {
     $result['msg'] = $msg;
     $result['code'] = $code;
     if ($data) {
-        $result['data'] = $data;
+//        $result['data'] = $data;
     }
 
     $json = JSON($result);
