@@ -59,8 +59,6 @@ if (!AcpService::validate ($result_arr) ){
     return;
 }
 
-
-echo "应答报文验签成功<br>\n";
 if ($result_arr["respCode"] == "00"){
     //成功
     $data['tn'] = $result_arr["tn"];
