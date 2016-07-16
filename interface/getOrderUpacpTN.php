@@ -81,12 +81,13 @@ if ($result_arr["respCode"] == "00"){
 //}
 
 function returnData ($msg, $code, $data) {
-    $result['msg'] = $msg;
-    $result['code'] = $code;
-    if ($data) {
+//    $result['msg'] = $msg;
+//    $result['code'] = $code;
+//    if ($data) {
 //        $result['data'] = $data;
-    }
-
-    $json = JSON($result);
-    echo $json;
+//    }
+//
+//    $json = JSON($result);
+//    echo $json;
+    echo '{"msg"="haha"}';
 }
