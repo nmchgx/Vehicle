@@ -42,30 +42,30 @@ $params = array(
 // 		'reqReserved' =>'透传信息',        //请求方保留域，透传字段，查询、通知、对账文件中均会原样出现，如有需要请启用并修改自己希望透传的数据
 );
 
-AcpService::sign ( $params ); // 签名
-$url = SDK_App_Request_Url;
-
-$result_arr = AcpService::post ($params,$url);
-if(count($result_arr)<=0) { //没收到200应答的情况
-    returnData("未收到应答", 0, null);
-    return;
-}
-
-
-if (!AcpService::validate ($result_arr) ){
-    returnData("应答报文验签失败", 0, null);
-    return;
-}
-
-if ($result_arr["respCode"] == "00"){
-    //成功
-    $data['tn'] = $result_arr["tn"];
-    returnData("获取成功", 1, $data);
-} else {
-    //其他应答码做以失败处理
-    returnData($result_arr["respMsg"], 0, null);
-}
-
+//AcpService::sign ( $params ); // 签名
+//$url = SDK_App_Request_Url;
+//
+//$result_arr = AcpService::post ($params,$url);
+//if(count($result_arr)<=0) { //没收到200应答的情况
+//    returnData("未收到应答", 0, null);
+//    return;
+//}
+//
+//
+//if (!AcpService::validate ($result_arr) ){
+//    returnData("应答报文验签失败", 0, null);
+//    return;
+//}
+//
+//if ($result_arr["respCode"] == "00"){
+//    //成功
+//    $data['tn'] = $result_arr["tn"];
+//    returnData("获取成功", 1, $data);
+//} else {
+//    //其他应答码做以失败处理
+//    returnData($result_arr["respMsg"], 0, null);
+//}
+returnData("应答报文验签失败", 0, null);
 //$sql = "SELECT orders.Order_ID, orders.C_ID,orders.Car_ID,car.Car_Model,orders.Filling_Type,orders.Filling_Amount,orders.Filling_Total,orders.Filling_Station_ID,orders.Filling_Station,orders.Filling_Time,orders.Order_Status,orders.Order_QRCode FROM orders,car WHERE orders.C_ID = '$C_ID' AND car.Car_ID = orders.Car_ID $key_words ORDER BY orders.Order_Time DESC";
 //$sqlResult = $mysql->query($sql);
 //
