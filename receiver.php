@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	session_start();
 	
 	require "helper/jsonHelper.php";		//json封装
