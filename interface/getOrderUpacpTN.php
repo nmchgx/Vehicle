@@ -89,5 +89,5 @@ function returnData ($msg, $code, $data) {
 //
 //    $json = JSON($result);
 //    echo $json;
-    echo '{"msg"="haha"}';
+    echo '{"msg":"haha"}';
 }
