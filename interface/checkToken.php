@@ -36,15 +36,28 @@
 				$result=mysql_query($sql);
 				
 				$nickName = "";
+				$sex = "";
+				$birthday = "";
+				$place = "";
+				$sign = "";
+				
 				while($row=mysql_fetch_array($result))
 				{
 					$nickName = $row['C_NickName'];
 					$chead = $row['C_Head'];
+					$sex = $row['C_Sex'];
+					$birthday = $row['C_Birthday'];
+					$place = $row['C_Place'];
+					$sign = $row['C_Sign'];
 				}
 				$data['nickName'] = $nickName;
 				$data['token'] = $token;
 				$data['C_ID'] = $c_id;
 				$data['C_Head'] = $chead;
+				$data['C_Sex'] = $sex;
+				$data['C_Birthday'] = $birthday;
+				$data['C_Place'] = $place;
+				$data['C_Sign'] = $sign;
 				
 				$array['data'] = $data;
 				$array['msg'] = "登陆成功";

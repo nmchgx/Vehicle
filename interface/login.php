@@ -26,12 +26,20 @@
 		$psw = "";
 		$nickName = "";
 		$cid = "";
+		$sex = "";
+		$birthday = "";
+		$place = "";
+		$sign = "";
 		while($row=mysql_fetch_array($result))
 		{
 			$psw = $row['C_Password'];
 			$nickName = $row['C_NickName'];
 			$cid = $row['C_ID'];
 			$chead = $row['C_Head'];
+			$sex = $row['C_Sex'];
+			$birthday = $row['C_Birthday'];
+			$place = $row['C_Place'];
+			$sign = $row['C_Sign'];
 		}
 		if($psw === "")
 		{
@@ -53,6 +61,10 @@
 				$data['loginName'] = $loginName;
 				$data['C_ID'] = $cid;
 				$data['C_Head'] = $chead;
+				$data['C_Sex'] = $sex;
+				$data['C_Birthday'] = $birthday;
+				$data['C_Place'] = $place;
+				$data['C_Sign'] = $sign;
 				
 				$array['data'] = $data;
 				$array['msg'] = "登陆成功";
