@@ -39,7 +39,7 @@
 				$ordermsg = setData(8, "支付状态", "已支付", $ordermsg);
 			
 			
-			if($row['Order_Status'] === "0")
+			if($row['Order_Status'] === "1")
 				$ordermsg = setData(9, "订单状态", "未完成", $ordermsg);
 			else
 				$ordermsg = setData(9, "订单状态", "已完成", $ordermsg);
