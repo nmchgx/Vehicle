@@ -60,6 +60,7 @@
 						case "logout":  require "interface/logout.php"; break;
 						case "updateCustomerAvatar":  require "interface/updateCustomerAvatar.php"; break;
 						case "getQiniuToken":  require "interface/getQiniuToken.php"; break;
+						case "updateCustomerInfo": require "interface/updatePersonInfo.php"; break;
 						/* 用户管理 end */
 						
 						/* 汽车维护 start */
