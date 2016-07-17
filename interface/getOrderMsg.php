@@ -3,7 +3,7 @@
 	require "../helper/connectSQL.php";
 	$Order_Key = $_POST['Order_Key'];
 	
-	$sql = "SELECT C_NickName, Car_Brand, Car_Model, Car_LicensePlate, Filling_Type, Filling_Amount, Filling_Total, Filling_Station, Filling_Time, Order_Status FROM car, customer, orders WHERE car.Car_ID=orders.Car_ID AND customer.C_ID=orders.C_ID AND Orders.Order_Key ='".$Order_Key."'";
+	$sql = "SELECT C_NickName, Car_Brand, Car_Model, Car_LicensePlate, Filling_Type, Filling_Amount, Filling_Total, Filling_Station, Filling_Time, Order_Status, Pay_Status FROM car, customer, orders WHERE car.Car_ID=orders.Car_ID AND customer.C_ID=orders.C_ID AND Orders.Order_Key ='".$Order_Key."'";
 	
 	$result=mysql_query($sql);
 	
@@ -32,10 +32,19 @@
 			$ordermsg = setData(5, "总价格", "￥".$row['Filling_Total']."元", $ordermsg);
 			$ordermsg = setData(6, "加油站", $row['Filling_Station'], $ordermsg);
 			$ordermsg = setData(7, "加油时间", $row['Filling_Time'], $ordermsg);
-			if($row['Order_Status'] === "1")
-				$ordermsg = setData(8, "订单状态", "未完成", $ordermsg);
+			
+			if($row['Pay_Status'] === "0")
+				$ordermsg = setData(8, "支付状态", "未支付", $ordermsg);
 			else
-				$ordermsg = setData(8, "订单状态", "已完成", $ordermsg);
+				$ordermsg = setData(8, "支付状态", "已支付", $ordermsg);
+			
+			
+			if($row['Order_Status'] === "0")
+				$ordermsg = setData(9, "订单状态", "未完成", $ordermsg);
+			else
+				$ordermsg = setData(9, "订单状态", "已完成", $ordermsg);
+			
+
 			
 			$i++;
 		}
