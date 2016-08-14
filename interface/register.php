@@ -33,11 +33,11 @@
 				{
 					$ID = $row['C_ID'];
 				}
-				$sql2 = "insert into car(C_ID, Car_Brand, Car_Logo, Car_Model, Car_LicensePlate, Car_EngineNum, Car_BodyLevel, Car_Mileage, Car_GasVol, Car_EngIsOK, Car_TranIsOK, Car_LightIsOK, Car_VinNo, Car_Img) values (".$ID.",'吉普','http://7xst41.com2.z0.glb.clouddn.com/Jeep.png','牧马人','浙JA1285','1634814','四门四座',1800,18,1,1,1,'91110095','http://7xst41.com2.z0.glb.clouddn.com/FizfSQ9eEaJ7W7cCsw_gMt1CHOn0')";
+				$sql2 = "insert into car(C_ID, Car_Brand, Car_Logo, Car_Model, Car_LicensePlate, Car_EngineNum, Car_BodyLevel, Car_Mileage, Car_GasVol, Car_EngIsOK, Car_TranIsOK, Car_LightIsOK, Car_VinNo, Car_Img) values (".$ID.",'吉普','http://7xst41.com2.z0.glb.clouddn.com/Jeep.png','牧马人','浙JA1285','1634814','四门四座',1800,18,1,1,1,'91110095','http://7xst41.com1.z0.glb.clouddn.com/Audi-A4l.jpg')";
 		
 				$result4=mysql_query($sql2);
 				
-				$sql1 = "insert into car(C_ID, Car_Brand, Car_Logo, Car_Model, Car_LicensePlate, Car_EngineNum, Car_BodyLevel, Car_Mileage, Car_GasVol, Car_EngIsOK, Car_TranIsOK, Car_LightIsOK, Car_VinNo, Car_Img) values (".$ID.",'奥迪','http://7xst41.com2.z0.glb.clouddn.com/Audi.png','A4L','粤YM5610','G4GA-5B257630','四门四座',1200,76,0,1,1,'LBEPCCAK45X116238','http://7xst41.com2.z0.glb.clouddn.com/FmMY8_f5z0TulMqNptvY53zV5gdW')";
+				$sql1 = "insert into car(C_ID, Car_Brand, Car_Logo, Car_Model, Car_LicensePlate, Car_EngineNum, Car_BodyLevel, Car_Mileage, Car_GasVol, Car_EngIsOK, Car_TranIsOK, Car_LightIsOK, Car_VinNo, Car_Img) values (".$ID.",'奥迪','http://7xst41.com2.z0.glb.clouddn.com/Audi.png','A4L','粤YM5610','G4GA-5B257630','四门四座',1200,76,0,1,1,'LBEPCCAK45X116238','http://7xst41.com1.z0.glb.clouddn.com/Jeep-wrangler.jpg')";
 		
 				$result3=mysql_query($sql1);
 				
